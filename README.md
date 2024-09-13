@@ -33,5 +33,5 @@ This loyalty program allows a small coffee shop to engage with customers through
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/coffee-loyalty-telegram-bot.git
-   cd coffee-loyalty-telegram-bot
+   git clone https://github.com/Measmonysuon/coffee_loyalty_program.git
+   cd coffee_loyalty_program
