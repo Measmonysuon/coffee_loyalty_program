@@ -28,7 +28,8 @@ rewards = {
     'free_coffee': 100,  # Points needed for a free coffee
 }
 
-# Register the user and initialize their data
+# Register the user and initialize their data (/start: Initiates the bot, registers the customer for the loyalty program, and explains how it works.)
+
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     user_id = message.chat.id
@@ -45,7 +46,7 @@ def send_welcome(message):
     else:
         bot.reply_to(message, f"Welcome back! You have {user[2]} points.")
 
-# Check current points
+# Check current points (/my_points: Allows the customer to check their current points.)
 @bot.message_handler(commands=['my_points'])
 def check_points(message):
     user_id = message.chat.id
@@ -57,7 +58,8 @@ def check_points(message):
     else:
         bot.reply_to(message, "You are not registered yet. Use /start to register.")
 
-# Redeem rewards
+# Redeem rewards (/redeem: Redeems points if the customer has enough for a reward (e.g., a free coffee).)
+
 @bot.message_handler(commands=['redeem'])
 def redeem_points(message):
     user_id = message.chat.id
@@ -76,7 +78,7 @@ def redeem_points(message):
     else:
         bot.reply_to(message, "You are not registered yet. Use /start to register.")
 
-# Admin command to add points and record spent amount and order details
+# Admin command to add points and record spent amount and order details (/add_points <user_id> <points>: Admins can add points to a specific user based on their purchase.)
 @bot.message_handler(commands=['add_points'])
 def add_points(message):
     try:
@@ -109,7 +111,7 @@ def add_points(message):
     except:
         bot.reply_to(message, "Invalid command format. Use /add_points <user_id> <points> <spent_amount> <order_item>.")
 
-# Admin command to reset points after redemption
+# Admin command to reset points after redemption (/reset_points <user_id>: Resets a user’s points after redeeming a reward.)
 @bot.message_handler(commands=['reset_points'])
 def reset_points(message):
     try:
