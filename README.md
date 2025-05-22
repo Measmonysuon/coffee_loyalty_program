@@ -35,3 +35,41 @@ This loyalty program allows a small coffee shop to engage with customers through
    ```bash
    git clone https://github.com/Measmonysuon/coffee_loyalty_program.git
    cd coffee_loyalty_program
+   ```
+
+2. **Set up Environment Variables:**
+
+   Before running the bot, you need to set the following environment variables:
+
+   *   `TELEGRAM_BOT_TOKEN`: Your Telegram Bot API token. You can get this from BotFather on Telegram.
+   *   `TELEGRAM_ADMIN_ID`: The Telegram User ID of the administrator for this bot. This user ID will grant access to admin commands like `/add_points` and `/reset_points`. You can find your User ID by messaging a bot like `@userinfobot` on Telegram and retrieving your "Id".
+
+   **On Linux/macOS:**
+   ```bash
+   export TELEGRAM_BOT_TOKEN="your_actual_bot_token_here"
+   export TELEGRAM_ADMIN_ID="your_telegram_user_id_here"
+   ```
+
+   **On Windows (Command Prompt):**
+   ```cmd
+   set TELEGRAM_BOT_TOKEN="your_actual_bot_token_here"
+   set TELEGRAM_ADMIN_ID="your_telegram_user_id_here"
+   ```
+
+   **On Windows (PowerShell):**
+   ```powershell
+   $env:TELEGRAM_BOT_TOKEN="your_actual_bot_token_here"
+   $env:TELEGRAM_ADMIN_ID="your_telegram_user_id_here"
+   ```
+   *Note: For persistent storage of environment variables, you might need to add them to your shell's profile file (e.g., `.bashrc`, `.zshrc`, `config.fish`) or system environment settings.*
+
+3. **Install Dependencies:**
+   Make sure you have Python 3 installed. Then install the required Python library:
+   ```bash
+   pip install pyTelegramBotAPI
+   ```
+
+4. **Run the Bot:**
+   ```bash
+   python app.py
+   ```
